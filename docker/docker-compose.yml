@@ -1,0 +1,20 @@
+version: "3.3"
+
+services:
+  nginx:
+    image: demo1/nginx:centos
+    ports:
+      - "80:80"
+      - "443:443"
+   
+
+  redis:
+    image: demo1/redis:4.0
+    container_name: redis
+    expose:
+     - 6379
+
+  app1:
+    image: demo1/nodejs:8.11
+    environment:
+      - REDIS_URL=redis://redis
