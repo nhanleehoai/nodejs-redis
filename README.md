@@ -1,8 +1,8 @@
 ## Use Redis on NodeJs as Cache
 
-Redis is argually a fatest IMDB (In Memory DataBase) it is most commonly used as a cache engine.
+Redis is arguably the fatest IMDB (In Memory DataBase) and it is most commonly used as a cache engine.
 
-NodeJS has gained popularity and bacome ubiquitous
+NodeJS has gained popularity and become ubiquitous
 
 In this demo, I'll show the steps to build 3 Docker images: Nginx, Redis, and NodeJs
 
@@ -25,7 +25,7 @@ In this demo, I'll show the steps to build 3 Docker images: Nginx, Redis, and No
 <img src="docs/01-01-build-nginx.png" />
 
 - Build the Docker image which has Redis and tag it as "demo1/redis:4.0". At the time of this writing, the latest Redis stable version is 4.0
-Redis has EPEL repository on Centos so that we can install using "yum" however, it is quite an old version. 
+Redis has EPEL repository on Centos so that we can easily install using "yum", however, it is quite an old version. 
 To have a latest Redis version, we need to down the source code and build it by "make" command
 
 ```
@@ -82,10 +82,13 @@ And query the cache on redis
 <img src="docs/03-query.png" />
 
 
-Tha
+That's it! We have sucessfully createa a skeleton for building Nodejs app that uses Redis as a cache server.
+With Docker, Microservice architecture can be achieved with ease.
 
+### Next steps
 
-
+- Use "Express Generator" to generate a standard folder strucure for Express, then add whatever business logics 
+- Configure the Docker Swarm so that we can have multiple Nodejs instances
 
 
 
